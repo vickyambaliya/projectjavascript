@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body {
+            transition: background-color 1.0s; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        button {
+            background-color: #007BFF; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            padding: 15px 30px; 
+            font-size: 16px; 
+            cursor: pointer;
+            transition: background-color 0.5s, transform 0.5s; 
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.25); 
+        }
+
+      
+        
+    </style>
+</head>
+<body id="color">
+    <script>
+        function on() {
+            var a = document.getElementById("color");
+            // Check the current background color and set the next cool color
+            if (a.style.backgroundColor === "rgb(0, 128, 255)") { 
+                a.style.backgroundColor = "rgb(0, 204, 204)"; 
+            } else if (a.style.backgroundColor === "rgb(0, 204, 204)") { 
+                a.style.backgroundColor = "rgb(0, 255, 128)"; 
+            } else if (a.style.backgroundColor === "rgb(0, 255, 128)") { 
+                a.style.backgroundColor = "rgb(128, 255, 0)";
+            } else if (a.style.backgroundColor === "rgb(128, 255, 0)") { 
+                a.style.backgroundColor = "rgb(128, 0, 255)"; 
+            } else if (a.style.backgroundColor === "rgb(128, 0, 255)") { 
+                a.style.backgroundColor = "rgb(0, 0, 255)"; 
+            } else {
+                a.style.backgroundColor = "rgb(0, 128, 255)"; 
+            }
+        }
+    </script>
+
+    <button onclick="on()">Change Color</button>
+</body>
+</html>
